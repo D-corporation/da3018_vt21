@@ -6,12 +6,9 @@ public class BMICalculator {
         this.height = height;
     }
 
-    public void calculateBMI() {
+    public double calculateBMI() {
         BMI = weight / (height * height);
-    }
-    
-    public boolean isOverweight() {
-        return (BMI > 25);
+        return (BMI);
     }
 
     //this is a commment in java 
@@ -23,7 +20,7 @@ public class BMICalculator {
         
         //print out the bmi
 
-        system.out.println('Your BMI is ' + bmi + '.')
+        System.out.println("Your BMI is " + bmi + ".");
     }
 }
 
