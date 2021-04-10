@@ -11,7 +11,7 @@ public class BMICalculator {
     }
     
     public boolean isOverweight() {
-        return (BMI > 25)
+        return (BMI > 25);
     }
 }
 
