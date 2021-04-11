@@ -23,4 +23,3 @@ public class BMICalculator {
         System.out.println("Your BMI is " + bmi + ".");
     }
 }
-
