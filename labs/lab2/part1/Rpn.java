@@ -15,6 +15,10 @@ public class Rpn {
         // creates a object of class Stack from part 1 of lab
         Stack stk = new Stack();
 
+        double num1 = 0;
+        double num2 = 0;
+        double result = 0;
+
         // loops through each ele(ment) of the created array expression_arr 
         for (String ele: expression_arr) {
            
@@ -30,7 +34,7 @@ public class Rpn {
                     num1 = stk.pop();
                     num2 = stk.pop();
                 
-                    stk.push(num1 - num2);
+                    stk.push(num2 - num1);
                     break;
                 
                 case "*":
@@ -50,7 +54,7 @@ public class Rpn {
 
                 case "=":
                     result = stk.pop();
-                    system.out.println(result);
+                    System.out.println(result);
 
                     break;
 
