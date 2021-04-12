@@ -13,20 +13,29 @@ public class Stack {
     private double[] array = new double[N-1];
 
     boolean is_empty() {
-        // return true or false
+        // if top is -1 the stack is empty, returning true
+        // else it is not empty, returning false
 
-        return true;
+        if (top == -1) {
+            return true;
+        } else {
+            return false;
+        }
     } 
 
     void push(double x) {
+        this.top += 1;
 
+        array[top] = x;
     }
 
     double pop() {
-        return 0;
-    }
 
-    public static void main(String[] args) {
+        double popped_value = array[top];
+        array[top] = 0.0;
+        top -= 1;
+        return popped_value;
 
     }
+    
 }
