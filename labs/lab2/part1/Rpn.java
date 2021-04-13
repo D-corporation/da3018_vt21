@@ -9,19 +9,23 @@ public class Rpn {
         // user inputs the Rpn expression
         String expression = scan.nextLine();
         
+        // maybe not necessary but debugger recommends closing the scanner object 
+        scan.close();
+
         // splits the string by each space and creates an array
         String[] expression_arr = expression.split(" ");
         
         // creates a object of class Stack from part 1 of lab
         Stack stk = new Stack();
 
+        // used later in switch cases
         double num1 = 0;
         double num2 = 0;
         double result = 0;
 
         // loops through each ele(ment) of the created array expression_arr 
         for (String ele: expression_arr) {
-           
+
             switch (ele) {
                 case "+":
                     num1 = stk.pop();
@@ -49,7 +53,7 @@ public class Rpn {
                     num1 = stk.pop();
                     num2 = stk.pop();
 
-                    stk.push(num1 / num2);
+                    stk.push(num2 / num1);
                     break;
 
                 case "=":

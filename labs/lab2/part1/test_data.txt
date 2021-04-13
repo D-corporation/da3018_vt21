@@ -1,0 +1,16 @@
+# Mixed use of operands
+
+11 12 + 15 10 - * =
+138.0 219.48 / 29 14 - + =
+
+# Repeated use of operands
+
+47 42 + 128 328 + 19284 48 + 482 328 + + =
+
+# Division 
+
+# Substracion 
+
+# Multiplication
+
+# Addidion
