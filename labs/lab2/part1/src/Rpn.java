@@ -1,3 +1,11 @@
+// To run the included jar file with test data there are two options
+// 
+// Option 1: execute run_test.sh in your terminal.
+//      This script pipes each line from test_data.txt to the executable jar file
+// Oprion 2: write in the command,
+//      java -jar Rpn.jar
+//      Enter a reverse polish expression from the test data (copy and paste)
+
 import java.util.Scanner;
 
 public class Rpn {
