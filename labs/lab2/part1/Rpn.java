@@ -27,6 +27,8 @@ public class Rpn {
         for (String ele: expression_arr) {
 
             switch (ele) {
+                // case for each operator
+                // if there is no operator the default will be to push a double to the stack
                 case "+":
                     num1 = stk.pop();
                     num2 = stk.pop();
@@ -63,6 +65,8 @@ public class Rpn {
                     break;
 
                 default:
+                    // converts string to double and pushes to stack stk
+                    // possible error if ele is just a normal string(not a string number)
                     stk.push(Double.parseDouble(ele));
 
             }
