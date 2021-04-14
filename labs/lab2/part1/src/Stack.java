@@ -1,5 +1,7 @@
 public class Stack {
 
+    // is it better to use class varibales for top and N?
+
     // when the stack is empty the top = -1
     // increases with 1 at each push
     // decreases with -1 at each pop
@@ -9,7 +11,7 @@ public class Stack {
     // N-1: the stack is full
     // N: stack overflow
     private int N = 1000;
-
+ 
     private double[] array = new double[N];
 
     boolean is_empty() {
