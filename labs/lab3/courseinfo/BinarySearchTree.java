@@ -46,6 +46,8 @@ public class BinarySearchTree {
 				left = insert(left, node); // go left
 			} else if (node.getCourseCode().compareTo(currentKey) > 0) { // left string "after" right string
 				right = insert(right, node); // go right: fixes bug
+			} else if (node.getCourseCode().compareTo(currentKey) == 0) {
+				root = node; // in the case of we are inserting new course info in an alreay existing node
 			}
 
 			root.setChildren(left, right);
@@ -58,7 +60,7 @@ public class BinarySearchTree {
 	 */
 
 	public int size() {
-		
+
 	    return 0; // Dummy return value, to make it compile. Should be replaced with proper algorithm.
 	}
 
