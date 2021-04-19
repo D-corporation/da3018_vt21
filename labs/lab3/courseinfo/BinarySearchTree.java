@@ -60,8 +60,7 @@ public class BinarySearchTree {
 	 */
 
 	public int size() {
-		
-	    return (size(this.root) + 1); // Dummy return value, to make it compile. Should be replaced with proper algorithm.
+	    return size(this.root); 
 	}
 
 	private int size(BSTNode node) {
@@ -76,7 +75,28 @@ public class BinarySearchTree {
 	 * find: Find a course given a course code
 	 */
 	public BSTNode find(String courseCode) {
-	    return null; // Dummy return value. Should be replaced with a proper algorithm.
+
+		return (find(courseCode, this.root));
+	
+	}
+
+	private BSTNode find(String courseCode, BSTNode node) {
+
+		
+		if (node == null) {
+			// We need to return a BSTNode object
+			// problem is if we return null we will get an error
+			// when we call courses.find("courseCode").getCourseName()
+			// instead we create a new BSTNode with CourseName = Course code does not exist
+			BSTNode nullNode = new BSTNode("", "Course code does not exist", 0.0);
+			return nullNode;
+		} else if (node.getCourseCode() == courseCode) {
+			return node;
+		} else if (courseCode.compareTo(node.getCourseCode()) < 0) {
+			return (find(courseCode, node.getLeftChild()));
+		} else {
+			return (find(courseCode, node.getRightChild()));
+		}
 	}
 
 
