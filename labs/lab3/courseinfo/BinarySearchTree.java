@@ -43,9 +43,9 @@ public class BinarySearchTree {
 			BSTNode right = root.getRightChild();
 
 			if (node.getCourseCode().compareTo(currentKey) < 0) { // left string "before" right string
-				left = insert(left, node);
+				left = insert(left, node); // go left
 			} else if (node.getCourseCode().compareTo(currentKey) > 0) { // left string "after" right string
-				right = insert(left, node);
+				right = insert(right, node); // go right: fixes bug
 			}
 
 			root.setChildren(left, right);
