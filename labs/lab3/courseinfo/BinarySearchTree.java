@@ -60,8 +60,16 @@ public class BinarySearchTree {
 	 */
 
 	public int size() {
+		
+	    return (size(this.root) + 1); // Dummy return value, to make it compile. Should be replaced with proper algorithm.
+	}
 
-	    return 0; // Dummy return value, to make it compile. Should be replaced with proper algorithm.
+	private int size(BSTNode node) {
+		if (node == null) {
+			return 0;
+		} else {
+			return (size(node.getLeftChild()) + size(node.getRightChild()) + 1);
+		}
 	}
 
 	/**
