@@ -58,6 +58,7 @@ public class BinarySearchTree {
 	 */
 
 	public int size() {
+		
 	    return 0; // Dummy return value, to make it compile. Should be replaced with proper algorithm.
 	}
 
