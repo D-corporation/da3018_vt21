@@ -1,9 +1,15 @@
 package courseinfo;
+
+import java.util.Iterator;
+import java.util.NoSuchElementException;
+// import java.lang.Iterable;
+
 /**
  * Store course information in a binary search tree
+ * @param <BSTNode>
  *
  */
-public class BinarySearchTree {
+public class BinarySearchTree<BSTNode> implements Iterable<BSTNode> {
 	/**
 	 * Attributes
      */
@@ -80,8 +86,7 @@ public class BinarySearchTree {
 	}
 
 	private BSTNode find(String courseCode, BSTNode node) {
-
-		
+		// TODO: optimize and check for certain conditions like node is null.
 		if (node == null) {
 			// We need to return a BSTNode object
 			// problem is if we return null we will get an error
@@ -96,6 +101,36 @@ public class BinarySearchTree {
 		} else {
 			return (find(courseCode, node.getRightChild()));
 		}
+	}
+
+	public Iterator<BSTNode> iterator() {
+		// return an objec that implements Iterable<BSTNode> !
+		// TODO: Implement methods
+		// 	- hasNext()
+		// 	- next()
+		// check page 288 Intoduction to algorithms, InOrder Tree Walk
+
+		return new Iterator<BSTNode>();
+
+	}
+	
+	private class NodeIterator implements Iterator<BSTNode> {
+		
+		private BSTNode current;
+
+		public NodeIterator() {
+			this.current = root;
+		}
+
+		public boolean hasNext() {
+			// FIXME: should not return false
+			return this.current != null;
+		}
+		public BSTNode next() {
+			return this.current.getLeftChild();
+		}
+
+
 	}
 
 
