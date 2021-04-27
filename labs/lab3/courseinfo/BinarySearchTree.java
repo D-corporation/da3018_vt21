@@ -1,5 +1,4 @@
 package courseinfo;
-
 /**
  * Store course information in a binary search tree
  *
@@ -7,7 +6,7 @@ package courseinfo;
 public class BinarySearchTree {
 	/**
 	 * Attributes
-         */
+     */
 	BSTNode root=null;      // The root of the tree. Start with an empty tree.
 
 	public BinarySearchTree() {

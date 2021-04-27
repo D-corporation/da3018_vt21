@@ -1,0 +1,35 @@
+# Test 1:
+15 13 + =
+Expected result: 28.0
+
+# Test 2:
+8 6 - =
+Expected result: -2.0
+
+# Test 3:
+5 15 * =
+Expected result: 75.0
+
+# Test 4:
+10 100 / =
+Expected result: 10.0
+
+# Test 5:
+5 0 / =
+Expected result: 0.0
+
+# Test 6:
+0 5 / =
+Expected result: Infinity
+
+# Test 7:
+5 5 + 10 10 + + =
+Expected result: 30.0
+
+# Test 8:
+25 28 - 14 13 + / =
+Expected result: 9.0
+
+# Test 9:
+11 12 + 10 15 - * =
+Expected result: 115.0
