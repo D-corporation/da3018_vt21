@@ -5,7 +5,6 @@ import java.lang.Exception;
 import java.util.NoSuchElementException;
 
 public class Heap {                    // Note: just the skeleton of a class!
-    // TODO: find bug in the stub
     private int heap_array[];
     private int n_elems = 0; // heapsize
     private int capacity;
@@ -21,23 +20,21 @@ public class Heap {                    // Note: just the skeleton of a class!
      * @param i, index of the element to heapify from
      */
     private void heapify(int i) {
-        // TODO: Implement this!
-        // max heap
-        int left = 2*i + 1;
+        
+        int left = 2*i + 1; 
         int right = 2*i + 2;
         int smallest; 
-        //TODO: may need to swap < and > 
         
-        if (left < n_elems) {
-            if (heap_array[left] < heap_array[i]) {
-                smallest = left;
+        if (left < n_elems) { // checks if the left child exists
+            if (heap_array[left] < heap_array[i]) { // check if left child of i is less than node i key
+                smallest = left; // if left node is smaller than node i key, set smallest to left node key
             } else {
-                smallest = i;
+                smallest = i; // else we set smallest to node i
             }
             
-            if (right < n_elems) {
-                if (heap_array[right] < heap_array[smallest]) {
-                    smallest = right;
+            if (right < n_elems) { // checks if right child exists
+                if (heap_array[right] < heap_array[smallest]) { // check if right node key of i is less than node i key
+                    smallest = right; 
                 }
             }
 
@@ -88,9 +85,8 @@ public class Heap {                    // Note: just the skeleton of a class!
      * @param x Element to add
      */
     public void insert(int x) throws Exception {
-        // TODO: Implement this!
 
-        if (n_elems == heap_array.length) { // checks if heap is full
+        if (n_elems == capacity) { // checks if heap is full
             throw new NoSuchElementException("Heap is full");
         }
 
@@ -107,8 +103,14 @@ public class Heap {                    // Note: just the skeleton of a class!
      * Throws an exception if trying to extract an element from an empty heap.
      */
     public int extractMin() throws Exception {
-        // TODO: Implement this!
-        return 0;
+
+        int root = heap_array[0]; // min element to return
+        heap_array[0] = heap_array[n_elems - 1]; // set root to last element in heap
+        heap_array[n_elems - 1] = 0; // "delete" last element in heap 
+        n_elems--; // decrease number of elemnts
+        heapify(0); // since heap property is broken we heapify the array
+
+        return root;
     }
 
     /**
