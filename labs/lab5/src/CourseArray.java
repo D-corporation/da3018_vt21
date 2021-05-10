@@ -1,3 +1,5 @@
+package src;
+import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -27,8 +29,39 @@ public class CourseArray {
      * Time complexity: quadratic in the number of elements in 'courses' array.
      */
     public void selectionSort() {
-        // To implement
+        // TODO: To implement
+
+        int n = this.courses.size(); // number of elements to be sorted
+        int min_index; // index of presumably the smallest element
+
+        for (int i = 0; i < n - 1; i++) {
+            min_index = i; 
+
+            for (int j = i + 1; j < n; j++) {
+                
+                if (this.courses.get(j).compareTo(this.courses.get(min_index)) < 0) { // check if 
+                    min_index = j;
+                }
+
+            }
+
+            swap(min_index, i); 
+        }
+        
     }
+
+    /**
+     * Swap element at index1 for element at index2
+     * @param index1 - integer of first index
+     * @param index2 - integer of second index
+     */
+    private void swap(int index1, int index2) {
+        String temp = this.courses.get(index1);
+
+        this.courses.set(index1, this.courses.get(index2));
+        this.courses.set(index2, temp);
+    }
+
 
 
     /*
@@ -40,7 +73,7 @@ public class CourseArray {
      * Time complexity: O(n lg n) comparisons, where n is the number of elements in the course array.
      */
     public void mergeSort() {
-        // To implement
+        // TODO: To implement
     }
 
     /*
@@ -51,7 +84,7 @@ public class CourseArray {
      * Side effect: sorts the 'courses' attribute
      */
     public void javaSort() {
-        // To implement
+        // TODO: To implement
     }
 
 
