@@ -1,9 +1,13 @@
 package src;
+import java.lang.reflect.Array;
 import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 import java.util.Scanner;
+
+import javax.xml.crypto.dsig.keyinfo.RetrievalMethod;
 
 public class CourseArray {
     public ArrayList<String> courses = new ArrayList<String>(); // Store course names in this attribute
@@ -39,10 +43,9 @@ public class CourseArray {
 
             for (int j = i + 1; j < n; j++) {
                 
-                if (this.courses.get(j).compareTo(this.courses.get(min_index)) < 0) { // check if 
+                if (courses.get(j).compareTo(courses.get(min_index)) < 0) { // check if 
                     min_index = j;
                 }
-
             }
 
             swap(min_index, i); 
@@ -56,10 +59,10 @@ public class CourseArray {
      * @param index2 - integer of second index
      */
     private void swap(int index1, int index2) {
-        String temp = this.courses.get(index1);
+        String temp = courses.get(index1);
 
-        this.courses.set(index1, this.courses.get(index2));
-        this.courses.set(index2, temp);
+        courses.set(index1, courses.get(index2));
+        courses.set(index2, temp);
     }
 
 
@@ -73,8 +76,59 @@ public class CourseArray {
      * Time complexity: O(n lg n) comparisons, where n is the number of elements in the course array.
      */
     public void mergeSort() {
-        // TODO: To implement
+        courses = mergeSort(courses);
     }
+
+    private ArrayList<String> mergeSort(ArrayList<String> A) {
+        
+        int n = A.size();
+        int mid;
+
+        if (n < 2) {
+            return A;
+        } else {
+            mid = (int) Math.floor(n/2);
+            ArrayList<String> half1 = mergeSort(new ArrayList<> (A.subList(0, mid)));
+            ArrayList<String> half2 = mergeSort(new ArrayList<> (A.subList(mid, n)));
+
+            return merge(half1, half2);
+        }
+
+    }
+
+
+
+    private ArrayList<String> merge(ArrayList<String> sortedArray1, ArrayList<String> sortedArray2) {
+        int n1 = sortedArray1.size(); 
+        int n2 = sortedArray2.size(); 
+        
+        ArrayList<String> mergedList = new ArrayList<>();
+        
+        int i = 0;
+        int j = 0;
+
+        while (i < n1 && j < n2) {
+            if (sortedArray1.get(i).compareTo(sortedArray2.get(j)) < 0) {
+                mergedList.add(sortedArray1.get(i)); 
+                i++;
+            } else {
+                mergedList.add(sortedArray2.get(j));
+                j++;
+            }
+        }
+
+        while (i < n1) {
+            mergedList.add(sortedArray1.get(i)); 
+            i++;
+        }
+
+        while (j < n2) {
+            mergedList.add(sortedArray2.get(j));
+            j++;
+        }
+
+        return mergedList;
+    }  
 
     /*
      * javaSort - use Java's library support for sorting.
@@ -84,7 +138,7 @@ public class CourseArray {
      * Side effect: sorts the 'courses' attribute
      */
     public void javaSort() {
-        // TODO: To implement
+        Collections.sort(courses);
     }
 
 
@@ -121,7 +175,7 @@ public class CourseArray {
         long checkpoints[] = new long[4]; // To store timestamps in
         // Start tests
         checkpoints[0] = System.currentTimeMillis();
-        courses1.selectionSort();
+        // courses1.selectionSort();
         checkpoints[1] = System.currentTimeMillis();
         courses2.mergeSort();
         checkpoints[2] = System.currentTimeMillis();

@@ -17,7 +17,7 @@
             "mainClass": "src.CourseArray",
             "projectName": "lab5_7720212e",
             "console": "integratedTerminal",
-            "args": ["<", "data/1000courses.txt"]
+            "args": ["<", "data/10_million_password_list_top_1000000.txt"]
         }
     ]
 }
