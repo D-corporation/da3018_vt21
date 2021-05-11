@@ -1,0 +1,23 @@
+# Report of Timing Experiments
+
+    ## All courses
+
+        Time for task selectionSort: 300 ms
+        Time for task mergeSort: 11 ms
+        Time for task javaSort: 6 ms
+
+    ## 1000 courses
+        Time for task selectionSort: 10 ms
+        Time for task mergeSort: 3 ms
+        Time for task javaSort: 1 ms
+
+    ## A bigger sample
+
+        For interest sake I downloaded and ran the list of the 10 million
+        most common passwords and sorted it. The results were:
+
+        Time for task selectionSort: More than 30 min (did not complete it)
+        Time for task mergeSort: 316 ms 
+        Time for task javaSort: 116 ms
+
+        Disclaimer: the list have several big chuncks that are alphabetically sorted.
