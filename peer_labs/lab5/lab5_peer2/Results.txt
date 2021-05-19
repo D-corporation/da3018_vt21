@@ -1,0 +1,44 @@
+10 courses:
+selection sort: 0ms
+mergesort: 0ms 
+javasort: 0ms
+
+100 courses:
+selection sort: 1ms
+mergesort: 0ms
+javasort: 0ms
+
+500 courses:
+selection sort: 5ms
+mergesort: 1ms
+javasort: 1ms
+
+1000 courses:
+selection sort: 13ms
+mergesort: 2ms
+javasort: 1ms
+
+2000 courses:
+selection sort: 20ms
+mergesort: 3ms
+javasort: 2ms 
+
+3000 courses:
+selection sort: 30ms
+mergesort: 4ms
+javasort: 4ms
+
+4000 courses:
+selection sort: 48ms
+mergesort: 6ms
+javasort: 4ms
+
+5000 courses:
+selection sort: 71ms
+mergesort: 7ms
+javasort: 5ms
+
+all courses:
+selection sort: 329ms
+mergesort: 14ms
+javasort: 7s

@@ -1,0 +1,44 @@
+
+Sorting all_courses.txt gave:
+RUN 1
+Time for task selectionSort: 1007 ms
+Time for task mergeSort: 66 ms
+Time for task javaSort: 82 ms
+Time for task longestPrefix: 11073 ms
+
+RUN 2
+Time for task selectionSort: 833 ms
+Time for task mergeSort: 29 ms
+Time for task javaSort: 21 ms
+Time for task longestPrefix: 10754 ms
+
+RUN 3
+Time for task selectionSort: 840 ms
+Time for task mergeSort: 30 ms
+Time for task javaSort: 24 ms
+Time for task longestPrefix: 10219 ms
+
+
+Sorting 5000courses.txt gave:
+RUN 1
+Time for task selectionSort: 26 ms
+Time for task mergeSort: 7 ms
+Time for task javaSort: 1 ms
+Time for task longestPrefix: 159 ms
+
+RUN 2
+Time for task selectionSort: 25 ms
+Time for task mergeSort: 5 ms
+Time for task javaSort: 3 ms
+Time for task longestPrefix: 134 ms
+
+RUN 3
+Time for task selectionSort: 30 ms
+Time for task mergeSort: 6 ms
+Time for task javaSort: 4 ms
+Time for task longestPrefix: 168 ms
+
+
+The difference between mergeSort and selectionSort is a lot smaller when sorting 5000 courses instead of 30 000. This shows the difference between O(n log n) and O(n^2). Therefore is mergeSort a lot more scalable than selectionSort.
+
+The difference between mergeSort and javaSort is small, both scale the same, so javaSort also has time complexity O(n log n). The small runtime difference is probably due because JavaSort has a more efficient implementation than my mergeSort. 

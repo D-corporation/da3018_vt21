@@ -1,0 +1,29 @@
+100courses:
+selectionsSort: 3-4ms
+mergeSort: 2ms
+javaSort: 0-1ms
+longestSharedPrefix: 5-6ms
+[Studies in Didactics of Mathematics for ]
+
+2000courses:
+selectionsSort: ~50ms
+mergeSort: ~10ms
+javaSort: 4ms
+longestSharedPrefix: ~40ms
+[Research practice in Computational Organic Chemistry for , Research practice in Simulations of Computer Science for ]
+
+
+5000courses:
+selectionsSort: ~250ms
+mergeSort: 16-20ms
+javaSort: 8-10ms
+longestSharedPrefix: ~80ms
+[Research practice in Computational Computer Science for Gen, Research practice in Simulations of Molecular Biology for B]
+
+
+30000courses (allcourses):
+selectionsSort: 950~1000ms
+mergeSort: ~30ms
+javaSort: 15~20ms
+longestSharedPrefix: ~130ms
+[Research practice in Observational Molecular Biology for Eco, Research practice in Simulations of Computer Science for Bio]
